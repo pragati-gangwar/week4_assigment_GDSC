@@ -5,14 +5,15 @@ class Solution{
     // avoid space at the starting of the string in "move disk....."
     long long toh(int N, int from, int to, int aux) {
         // Your code here
-       
             if(N>0)
 {
-    toh(N-1,1,2,3);
-    cout<<"move disc " <<N<<" from rod "<<from<<" to rod "<<to<<endl;
+    toh(N-1,from,aux,to);
+    cout<<"move disk " <<N<<" from rod "<<from<<" to rod "<<to<<endl;
     count++;
-    toh(N-1,2,3,1);
+    toh(N-1,aux,to,from);
+    return count;
     
 }
-    return count;
     }
+
+};
